@@ -8,12 +8,10 @@ query me {
         email
         bookCount
         savedBooks {
-            _id
             authors
             description
             bookId
             image
-            forSale
             link
             title
         }

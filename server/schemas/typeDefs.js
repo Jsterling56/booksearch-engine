@@ -28,9 +28,8 @@ const typeDefs = gql`
  input SavedBookInput {
         authors: [String]
         description: String
-        bookId: String
+        bookId: ID!
         image: String
-        forSale: String
         link: String
         title: String
     }
