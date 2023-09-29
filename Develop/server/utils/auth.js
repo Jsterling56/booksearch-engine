@@ -6,11 +6,17 @@ const expiration = '2h';
 
 module.exports = {
   // function for our authenticated routes
-  authMiddleware: function ({ context }, next) {
-    const token = context.token;
+  authMiddleware: function ({ req }, next) {
+    let token = req.body.token || req.query.token || req.headers.authorization;
+
+    // ["Bearer", "<tokenvalue>"]
+    if (req.headers.authorization) {
+      token = token.split(' ').pop().trim();
+    };
 
     if (!token) {
-      throw new Error('You have no token!');
+     // throw new Error('You have no token!');
+     return req
     }
 
     try {
@@ -22,7 +28,7 @@ module.exports = {
     }
 
     // send to next endpoint
-    return next();
+    return req;
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };

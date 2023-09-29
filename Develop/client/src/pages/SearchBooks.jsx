@@ -8,7 +8,7 @@ import { useMutation } from '@apollo/client';
 import { SAVE_BOOK } from '../utils/mutations';
 import { GET_ME } from '../utils/queries';
 
-const searchGoogleBooks = () => {
+const googleBookSearch = () => {
     const [searchedBooks, setSearchedBooks] = useState([]);
     const [searchInput, setSearchInput] = useState('');
     const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
@@ -113,7 +113,7 @@ const searchGoogleBooks = () => {
                             <p className='small'>Authors: {book.authors.join(',')}</p>
                             <p>{book.description}</p>
                         </CardContent>
-                        <CardActions>
+                        {/* <CardActions> */}
                             {Auth.loggedIn() && (
                                 <Button 
                                     variant="contained"
@@ -126,7 +126,7 @@ const searchGoogleBooks = () => {
                                         : 'Save this books!'}
                                     </Button>
                             )}
-                        </CardActions>
+                        {/* </CardActions> */}
                         </Card>
                         </Grid>
                 ))}
@@ -135,4 +135,4 @@ const searchGoogleBooks = () => {
     );
 };
 
-export default SearchBooks;
+export default googleBookSearch;
