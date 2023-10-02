@@ -12,9 +12,9 @@
 The Book Search Engine utilizes the Google Book Search API. Users can search for books, login and logout, save books to their profiles, and also remove books from their profiles. 
 
 ### User Story
-AS AN avid reader
-I WANT to search for new books to read
-SO THAT I can keep a list of books to purchase
+AS AN avid reader<br>
+I WANT to search for new books to read<br>
+SO THAT I can keep a list of books to purchase<br>
 
 GIVEN a book search engine<br>
 WHEN I load the search engine<br>
